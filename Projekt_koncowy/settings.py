@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'animals',
+    'employees',
 ]
 
 MIDDLEWARE = [
@@ -77,8 +78,11 @@ WSGI_APPLICATION = 'Projekt_koncowy.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'HOST': '127.0.0.1',
+        'NAME': 'animal_shelter',
+        'ENGINE': 'django.db.backends.postgresql',
+        'USER': 'postgres',
+        'PASSWORD': 'coderslab',
     }
 }
 
