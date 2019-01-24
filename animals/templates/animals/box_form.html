@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <br>
+    <form method="post">
+        <table>
+            <th></th>
+            <th height="50px">Wprowadź dane</th>
+        {{ form }}
+        </table>
+        {% csrf_token %}
+        <input type="submit" value="Dodaj">
+    </form>
+
+{% endblock %}

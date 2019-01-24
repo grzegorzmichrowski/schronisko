@@ -19,9 +19,9 @@ CONTRACTS = (
 
 
 class Employee(models.Model):
-    first_name = models.CharField(max_length=64)
-    last_name = models.CharField(max_length=64)
-    email = models.EmailField()
-    date_of_birth = models.DateField()
-    contract = models.IntegerField(choices=CONTRACTS)
-    profession = models.IntegerField(choices=PROFESSIONS)
+    first_name = models.CharField(max_length=64, verbose_name="Imię")
+    last_name = models.CharField(max_length=64, verbose_name="Nazwisko")
+    email = models.EmailField(verbose_name="E-mail")
+    date_of_birth = models.CharField(max_length=64, verbose_name="Data urodzenia")
+    contract = models.IntegerField(choices=CONTRACTS, verbose_name="Rodzaj umowy")
+    profession = models.IntegerField(choices=PROFESSIONS, verbose_name="Stanowisko")

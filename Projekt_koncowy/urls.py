@@ -16,6 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from animals.views import MainView, AnimalCreate, AnimalUpdate, AnimalDelete, BoxCreate, AnimalListWithFilterView
+from employees.views import EmployeeCreate
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', MainView.as_view(), name="main"),
+    path('add_animal', AnimalCreate.as_view(), name="add_animal"),
+    path('update_animal/<pk>', AnimalUpdate.as_view(), name="update_animal"),
+    path('delete_animal/<pk>', AnimalDelete.as_view(), name="delete_animal"),
+    path('add_employee', EmployeeCreate.as_view(), name="add_employee"),
+    path('add_box', BoxCreate.as_view(), name="add_box"),
+    path('animal_list', AnimalListWithFilterView.as_view(), name="animal_list"),
 ]

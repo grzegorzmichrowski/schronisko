@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pl_PL">
+<head>
+    <meta charset="UTF-8">
+    <title>Schronisko</title>
+</head>
+<body style="width: 50%; margin-left: auto; margin-right: auto">
+    <div>
+        <a href="{% url 'main' %}"><button><strong><h1>Schronisko</h1></strong></button></a>
+        <a href="{% url 'main' %}"><button><h3>Start</h3></button></a>
+        <a href="{% url 'animal_list' %}"><button><h3>Baza zwierząt</h3></button></a>
+        <button><h3>Wydarzenia</h3></button>
+        <button><h3>Wolontariat</h3></button>
+        <button><h3>Kontakt</h3></button>
+    </div>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

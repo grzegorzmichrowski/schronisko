@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <br>
+  <form method="get">
+  <table>
+    {{ filter.form }}
+  </table>
+    <button type="submit">Szukaj</button>
+  </form>
+
+  <ul>
+  {% for animal in filter.qs %}
+    <br>
+        <li><strong>Imię:</strong>&emsp;{{ animal.name }}</li>
+            <strong>Wiek:</strong>&emsp;{{ animal.age }} <br>
+            <strong>Płeć:</strong>&emsp;{{ animal.display_sex }} <br>
+            <strong>Stan zdrowia:</strong>&emsp;{{ animal.display_health_state }} <br>
+            <strong>Wielkość:</strong>&emsp;{{ animal.display_size }} <br>
+            <strong>Boks:</strong>&emsp;{{ animal.box }}
+        <br>
+  {% endfor %}
+  </ul>
+
+{% endblock %}
