@@ -21,6 +21,7 @@ from employees.views import EmployeeCreate
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('users.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('', MainView.as_view(), name="main"),
     path('add_animal', AnimalCreate.as_view(), name="add_animal"),
