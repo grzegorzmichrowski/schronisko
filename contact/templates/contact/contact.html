@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+    {{ contact.name }}
+    {{ contact.address }}
+    {{ contact.email }}
+    {{ contact.phone_number }}
+    {{ contact.bank_account_number }}
+    <br>
+    {% if user.groups.all.0.name == "Special users"%}
+    <a href="{% url 'update_contact' contact.pk %}"><button>Edytuj</button></a>
+    {% endif %}
+</div>
+
+{% endblock %}
