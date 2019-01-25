@@ -10,9 +10,15 @@
     <button type="submit">Szukaj</button>
   </form>
 
+    <br>
+  {% if user.groups.all.0.name == "Special users"%}
+  <a href="{% url 'add_animal' %}"><button>Dodaj zwierzę</button></a>
+    {% endif %}
+
   <ul>
   {% for animal in filter.qs %}
     <br>
+        <img src="media/{{ animal.img }}">
         <li><strong>Imię:</strong>&emsp;{{ animal.name }}</li>
             <strong>Wiek:</strong>&emsp;{{ animal.age }} <br>
             <strong>Płeć:</strong>&emsp;{{ animal.display_sex }} <br>
@@ -20,6 +26,14 @@
             <strong>Wielkość:</strong>&emsp;{{ animal.display_size }} <br>
             <strong>Boks:</strong>&emsp;{{ animal.box }}
         <br>
+      {% if user.is_authenticated %}
+        <a href=""><button>Adoptuj</button></a>
+      {% endif %}
+      {% if user.groups.all.0.name == "Special users"%}
+        <a href="{% url 'update_animal' animal.pk %}"><button>Edytuj</button></a>
+        <a href="{% url 'delete_animal' animal.pk %}"><button>Usuń</button></a>
+       {% endif %}
+      <br>
   {% endfor %}
   </ul>
 

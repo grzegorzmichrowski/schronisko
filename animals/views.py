@@ -41,6 +41,7 @@ class AnimalCreate(CreateView):
 
 
 class AnimalUpdate(UpdateView):
+
     form_class = AnimalForm
     model = Animal
     template_name_suffix = '_update_form'

@@ -1,7 +1,9 @@
 from django.db import models
 
 # Create your models here.
+from Projekt_koncowy import settings
 from employees.models import Employee
+from PIL import Image
 
 
 def get_display(key, list):
@@ -57,6 +59,7 @@ class Animal(models.Model):
     description = models.TextField(verbose_name="Opis")
     caretaker = models.ForeignKey(Employee, on_delete=models.CASCADE, verbose_name="Opiekun")
     box = models.ForeignKey(Box, on_delete=models.CASCADE, verbose_name="Boks")
+    img = models.ImageField(verbose_name="Zdjęcie", default="Main.jpg")
 
     def display_sex(self):
         return get_display(self.sex, SEX)
