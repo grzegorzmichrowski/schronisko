@@ -12,6 +12,7 @@ def get_display(key, list):
         return d[key]
     return None
 
+
 HEALTH_STATES = (
     (1, "Zdrowy"),
     (2, "Choruje przewlekle"),

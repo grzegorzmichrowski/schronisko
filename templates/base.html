@@ -12,7 +12,7 @@
             <a href="{% url 'animal_list' %}"><button><h3>Baza zwierząt</h3></button></a>
             <button><h3>Wydarzenia</h3></button>
             <button><h3>Wolontariat</h3></button>
-            <button><h3>Kontakt</h3></button>
+            <a href="{% url 'contact' %}"><button><h3>Kontakt</h3></button></a>
             {% if user.is_authenticated %}
               <a href="{% url 'logout' %}"><button><h3>Wyloguj</h3></button></a>
               <p>Cześć {{ user.username }}!</p>

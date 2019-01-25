@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'employees',
     'users.apps.UsersConfig',
     'mapwidgets',
+    'contact',
 ]
 
 MIDDLEWARE = [

@@ -19,6 +19,7 @@ from django.urls import path, include
 
 from Projekt_koncowy import settings
 from animals.views import MainView, AnimalCreate, AnimalUpdate, AnimalDelete, BoxCreate, AnimalListWithFilterView
+from contact.views import ContactView, ContactUpdate
 from employees.views import EmployeeCreate
 
 urlpatterns = [
@@ -32,5 +33,7 @@ urlpatterns = [
     path('add_employee', EmployeeCreate.as_view(), name="add_employee"),
     path('add_box', BoxCreate.as_view(), name="add_box"),
     path('animal_list', AnimalListWithFilterView.as_view(), name="animal_list"),
+    path('contact', ContactView.as_view(), name="contact"),
+    path('update_contact/<pk>', ContactUpdate.as_view(), name="update_contact")
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

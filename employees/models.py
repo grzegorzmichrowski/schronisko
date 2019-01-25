@@ -25,3 +25,6 @@ class Employee(models.Model):
     date_of_birth = models.CharField(max_length=64, verbose_name="Data urodzenia")
     contract = models.IntegerField(choices=CONTRACTS, verbose_name="Rodzaj umowy")
     profession = models.IntegerField(choices=PROFESSIONS, verbose_name="Stanowisko")
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"

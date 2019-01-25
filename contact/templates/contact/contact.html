@@ -3,11 +3,15 @@
 {% block content %}
 
 <div>
-    {{ contact.name }}
-    {{ contact.address }}
-    {{ contact.email }}
-    {{ contact.phone_number }}
-    {{ contact.bank_account_number }}
+    <strong><h2>Kontakt</h2></strong>
+    <br>
+    {% for element in contact %}
+    <p><strong>Nazwa:</strong>&emsp;{{ element.name }}</p>
+    <p><strong>Adres:</strong>&emsp;{{ element.address }}</p>
+    <p><strong>E-mail:</strong>&emsp;{{ element.email }}</p>
+    <p><strong>Numer telefonu:</strong>&emsp;{{ element.phone_number }}</p>
+    <p><strong>Numer konta bankowego:</strong>&emsp;{{ element.bank_account_number }}</p>
+    {% endfor %}
     <br>
     {% if user.groups.all.0.name == "Special users"%}
     <a href="{% url 'update_contact' contact.pk %}"><button>Edytuj</button></a>
