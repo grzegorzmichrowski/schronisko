@@ -51,7 +51,7 @@ class AnimalUpdate(UpdateView):
 class AnimalDelete(DeleteView):
 
     model = Animal
-    success_url = '/animals_list'
+    success_url = '/animal_list'
 
 
 class AnimalListWithFilterView(View):

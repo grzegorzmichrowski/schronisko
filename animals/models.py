@@ -60,7 +60,7 @@ class Animal(models.Model):
     description = models.TextField(verbose_name="Opis")
     caretaker = models.ForeignKey(Employee, on_delete=models.CASCADE, verbose_name="Opiekun")
     box = models.ForeignKey(Box, on_delete=models.CASCADE, verbose_name="Boks")
-    img = models.ImageField(verbose_name="Zdjęcie", default="Main.jpg")
+    img = models.ImageField(verbose_name="Zdjęcie", blank=True, null=True)
 
     def display_sex(self):
         return get_display(self.sex, SEX)
