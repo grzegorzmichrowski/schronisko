@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <br>
+    <form method="post">
+        <table>
+        <th height="50px"><strong>Prosimy o uzupełnienie formularza</strong></th>
+        <br>
+        <br>
+        {{ form }}
+        </table>
+        {% csrf_token %}
+        <input type="submit" value="Wyślij">
+    </form>
+
+{% endblock %}

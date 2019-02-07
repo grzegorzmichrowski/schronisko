@@ -27,7 +27,7 @@
             <strong>Boks:</strong>&emsp;{{ animal.box }}
         <br>
       {% if user.is_authenticated %}
-        <a href=""><button>Adoptuj</button></a>
+        <a href="{% url 'adoption_form' %}"><button>Adoptuj</button></a>
       {% endif %}
       {% if user.groups.all.0.name == "Special users"%}
         <a href="{% url 'update_animal' animal.pk %}"><button>Edytuj</button></a>

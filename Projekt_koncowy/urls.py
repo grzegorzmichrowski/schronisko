@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from Projekt_koncowy import settings
+from adoption.views import UserDetailsCreate, FormConfirmationView
 from animals.views import MainView, AnimalCreate, AnimalUpdate, AnimalDelete, BoxCreate, AnimalListWithFilterView
 from contact.views import ContactView, ContactUpdate
 from employees.views import EmployeeCreate
@@ -34,6 +35,8 @@ urlpatterns = [
     path('add_box', BoxCreate.as_view(), name="add_box"),
     path('animal_list', AnimalListWithFilterView.as_view(), name="animal_list"),
     path('contact', ContactView.as_view(), name="contact"),
-    path('update_contact/<pk>', ContactUpdate.as_view(), name="update_contact")
+    path('update_contact/<pk>', ContactUpdate.as_view(), name="update_contact"),
+    path('adoption_form', UserDetailsCreate.as_view(), name="adoption_form"),
+    path('form_confirmation', FormConfirmationView.as_view(), name="form_confirmation"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
