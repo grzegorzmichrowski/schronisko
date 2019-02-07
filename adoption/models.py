@@ -29,7 +29,7 @@ class UserDetails(models.Model):
     phone_number = models.IntegerField(verbose_name="Numer telefonu")
     status = models.IntegerField(choices=STATUS, verbose_name="Aktualne zajęcie")
     question_1 = models.IntegerField(verbose_name="Ile osób mieszka w domu/mieszkaniu?")
-    question_2 = models.IntegerField(choices=YES_NO, verbose_name="Czy wszystkie osoby zgadzają się na adopcję psa?")
+    question_2 = models.IntegerField(choices=YES_NO, verbose_name="Czy wszystkie osoby zgadzają się na adopcję?")
     question_3 = models.IntegerField(choices=YES_NO, verbose_name="Czy w domu są dzieci?")
     question_4 = models.TextField(null=True,
                                   verbose_name="Jeśli tak prosimy podać w jakim są wieku i jaki mają stosunek do zwierząt.")
