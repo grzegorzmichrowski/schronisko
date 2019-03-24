@@ -1,4 +1,3 @@
-from django.forms import ModelForm
 from django.shortcuts import render
 
 # Create your views here.
@@ -6,21 +5,14 @@ from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import CreateView
 
-from adoption.models import UserDetails
+from adoption.forms import AdoptionFormForm
 
 
-class UserDetailsForm(ModelForm):
+class AdoptionFormCreate(CreateView):
 
-    class Meta:
-        model = UserDetails
-        exclude = ["user"]
-
-
-class UserDetailsCreate(CreateView):
-
-    form_class = UserDetailsForm
+    form_class = AdoptionFormForm
     success_url = reverse_lazy("form_confirmation")
-    template_name = 'adoption/userdetails_form.html'
+    template_name = 'adoption/adoptionform_form.html'
 
 
 class FormConfirmationView(View):

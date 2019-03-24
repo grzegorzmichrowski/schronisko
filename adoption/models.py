@@ -1,4 +1,3 @@
-from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
@@ -23,30 +22,29 @@ HOME_TYPE = (
 )
 
 
-class UserDetails(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+class AdoptionForm(models.Model):
     address = models.CharField(max_length=255, verbose_name="Adres")
     phone_number = models.IntegerField(verbose_name="Numer telefonu")
     status = models.IntegerField(choices=STATUS, verbose_name="Aktualne zajęcie")
     question_1 = models.IntegerField(verbose_name="Ile osób mieszka w domu/mieszkaniu?")
     question_2 = models.IntegerField(choices=YES_NO, verbose_name="Czy wszystkie osoby zgadzają się na adopcję?")
     question_3 = models.IntegerField(choices=YES_NO, verbose_name="Czy w domu są dzieci?")
-    question_4 = models.TextField(null=True,
+    question_4 = models.TextField(null=True, blank=True,
                                   verbose_name="Jeśli tak prosimy podać w jakim są wieku i jaki mają stosunek do zwierząt.")
     question_5 = models.IntegerField(choices=YES_NO, verbose_name="Czy w ciągu dnia ktoś jest obecny w domu?")
     question_6 = models.IntegerField(choices=YES_NO, verbose_name="Czy ktoś w domu ma alergię na zwierzęta?")
     question_7 = models.IntegerField(choices=YES_NO, verbose_name="Czy w domu są już jakieś zwierzęta?")
-    question_8 = models.TextField(null=True,
+    question_8 = models.TextField(null=True, blank=True,
                                   verbose_name="Jeśli tak, proszę wpisać jakie i jaki jest ich stosunek do innych zwierząt.")
     question_9 = models.IntegerField(choices=YES_NO, verbose_name="Czy miała Pani/Pan wcześniej już jakieś zwierzęta?")
-    question_10 = models.TextField(null=True,
+    question_10 = models.TextField(null=True, blank=True,
                                    verbose_name="Jeśli tak to prosimy o kilka słów o nich oraz jak potoczyły się ich losy.")
     question_11 = models.IntegerField(choices=YES_NO, verbose_name="Czy adoptowała Pani/Pan już kiedyś zwierzę?")
     question_12 = models.TextField(verbose_name="Skąd pomysł na adopcję?")
     question_13 = models.IntegerField(choices=HOME_TYPE, verbose_name="Gdzie Pani/Pan mieszka?")
     question_14 = models.IntegerField(verbose_name="Jaki metraż mieszkania/domu(mkw)?")
     question_15 = models.IntegerField(null=True, verbose_name="Które piętro?")
-    question_16 = models.IntegerField(null=True, verbose_name="Czy jest winda?")
+    question_16 = models.IntegerField(choices=YES_NO, verbose_name="Czy jest winda?")
     question_17 = models.TextField(null=True,
                                    verbose_name="Czym ogrodzona jest posesja? Czy posesja jest dokładnie ogrodzona?")
     question_18 = models.CharField(max_length=255, verbose_name="Jak często zwierzę będzie chodzić na spacery?")
